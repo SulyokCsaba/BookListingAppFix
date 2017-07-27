@@ -146,6 +146,9 @@ public class MainActivity extends AppCompatActivity {
         if (checkConnection()) {
             new JSONQueryTask().execute(uriBuilder.toString());
         }
+        else {
+            mBookAdaptor.clear();
+        }
     }
 
     private class JSONQueryTask extends AsyncTask<String, Void, ArrayList<Book>> {
